@@ -22,6 +22,8 @@ Route::get('/status/filter','PagesController@filter')->name('filter.barang');
 
 Auth::routes();
 
+Route::post('/pesan','PesanController@store')->name('store.pesan');
+
 Route::match(["GET", "POST"], "/register", function(){ return redirect("/login"); })->name("register");
 
 Route::match(["GET", "POST"], "/admin-chris-reparasi", function(){ return redirect("/adminregister"); })->name("admin.register");
@@ -55,7 +57,6 @@ Route::middleware('auth')->group(function() {
 
     // Database Pesan
     Route::resource('pesan','PesanController')->except(['store']);
-    Route::post('/pesan','PesanController@store')->name('store.pesan');
 
     Route::get('/home', 'HomeController@index')->name('home');
 });

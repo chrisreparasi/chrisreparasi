@@ -46,6 +46,7 @@
                   <h5 class="text-center font-weight-normal mb-5"> ID Barang : {{ $barang->id_brg }}</h5>
                 </header>
                 <div class="row justify-content-center text-left">
+                
                   <div class="col-md-4 col-4 text-center">
                     @if ( $barang->status == "Proses" ) 
                       <img class="text-center" src="{{asset('img/clients')}}/tools.png" alt="" width="65%">
@@ -82,6 +83,7 @@
                     </p>
                   </div>
                 </div>
+                
 							</div> 
 						</div> 
 					</div> 

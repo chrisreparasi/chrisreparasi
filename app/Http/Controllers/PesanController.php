@@ -37,42 +37,50 @@ class PesanController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, Pesan $pesan)
+    public function store(Request $request)
     {
-        $pelanggan = Pelanggan::where('email', $request->email)->get();
+        $pelanggan = Pelanggan::all();
+        $pesan = Pesan::all();
 
         $request->validate([
             'email' => 'required',
             'pesan' => 'required'
         ]); 
 
-        $cekPelanggan="";
-        $cekPesan="";
-
+        $cekPelanggan="";        
         foreach( $pelanggan as $plgn ){
             if( $plgn->email == $request->email ){
                 $cekPelanggan = $request->email;
             }
-            if( $pesan->email == $request->email ){
+        }
+        
+        $cekPesan="";
+        foreach( $pesan as $psn ){
+            if( $psn->email == $request->email ){
                 $cekPesan = $request->email;
             }
         }
 
-        if( $cekPesan == $request->email ){
-            alert()->message('Anda sudah pernah mengirim pesan! Terimakasih');
+        if( $cekPelanggan!="" ){
+            if( $cekPesan!="" ){
+                echo '<script type="text/javascript">
+                    alert("Anda sudah pernah mengirim pesan!<br>Terimakasih")</script>';
+                return back();
+            }else{
+                $pelanggans = DB::table('pelanggan')->where('email',$request->email)->first();
+                Pesan::create([
+                    'nm_plgn' => $pelanggans->nm_plgn,
+                    'email' => $request->email,
+                    'pesan' => $request->pesan
+                ]);
+                echo '<script type="text/javascript">
+                    alert("Pesan Berhasil Dikirim<br>Terimakasih")</script>';
+                return redirect('/');
+            }
+        }elseif( $cekPelanggan=="" ){
+            echo '<script type="text/javascript">
+                alert("Data tidak terdaftar<br>Periksa kembali e-mail anda")</script>';
             return back();
-        }else if( $cekPelanggan != $request->email ){
-            alert()->message('Data pelanggan tidak terdaftar, silahkan periksa e-mail anda.');
-            return back();
-        } else {
-            $pelanggans = DB::table('pelanggan')->where('email',$request->email)->first();
-            Pesan::create([
-                'nm_plgn' => $pelanggans->nm_plgn,
-                'email' => $request->email,
-                'pesan' => $request->pesan
-            ]);
-            alert()->message('Pesan telah dikirim!');
-            return redirect('/');
         }
     }
 

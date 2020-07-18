@@ -42,7 +42,7 @@ class PelangganController extends Controller
         'email' => 'required'
       ]);
       Pelanggan::create($request->all());
-      return redirect('/pelanggan')->with('status','Data Berhasil Ditambah');
+      return redirect('/pelanggan')->with('sukses','Data Berhasil Disukses');
     }
 
     /**
@@ -86,7 +86,7 @@ class PelangganController extends Controller
           'no_telp' => $request->no_telp,
           'alamat' => $request->alamat
         ]);
-        return redirect('/pelanggan')->with('status','Data Berhasil Diubah');
+      return redirect('/pelanggan')->with('tambah','Data Berhasil Diubah');
     }
 
     /**

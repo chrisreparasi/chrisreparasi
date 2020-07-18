@@ -28,6 +28,7 @@
 /* Jumbotron */
 .jumbotron {
 	background-image: url(../img/slider/c7.jpg);
+	background-position: fixed;
 	background-attachment: fixed;
 	background-size: cover;
 	height: 500px;

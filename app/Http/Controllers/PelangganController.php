@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Alert;
 use App\Pelanggan;
 use Illuminate\Http\Request;
 

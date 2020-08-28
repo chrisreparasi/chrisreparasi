@@ -79,5 +79,7 @@
     <script src="js/script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/16.1.3/smooth-scroll.min.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  
+  @include('sweetalert::alert')
   </body>
 </html>

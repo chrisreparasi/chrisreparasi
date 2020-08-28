@@ -16,7 +16,7 @@
           @csrf
             <div class="form-row form-group col-md-10 mt-3">
               <label for="nama">Nama Pelanggan Baru</label>
-              <input type="text" class="form-control @error('nm_plgn') is-invalid @enderror" id="nama" placeholder="Masukkan Nama" name="nm_plgn" value="{{ old('nama') }}">
+              <input type="text" class="form-control @error('nm_plgn') is-invalid @enderror" id="nama" placeholder="Masukkan Nama" name="nm_plgn" value="{{ old('nm_plgn') }}">
               @error('nm_plgn')<div class="invalid-feedback">{{ $message }}</div> @enderror
             </div>
             <div class="form-row form-group col-md-10">
@@ -31,7 +31,7 @@
             </div>
             <div class="form-row form-group col-md-10">
                 <label for="alamat">Alamat Pelanggan Baru</label>
-                <textarea class="form-control" id="alamat"  name="alamat" value="{{ old('alamat') }}" rows="3" placeholder="Masukkan Alamat (optional)"></textarea>
+                <textarea class="form-control" id="alamat"  name="alamat" rows="3" placeholder="Masukkan Alamat (optional)">{{ old('alamat') }}</textarea>
             </div>
 
             <div class="modal fade" id="tambah-barang" aria-hidden="true">
@@ -51,7 +51,7 @@
                 </div>
               </div>
             </div>
-          <button type="submit" class="btn btn-primary mx-5 mb-3">Submit</i></button>
+          <button type="submit" class="btn btn-primary mx-5 mb-3">Tambah</i></button>
           <a href="/pelanggan" class="btn btn-info mx-5 mb-3">Kembali</a>
         </form>
       </div>

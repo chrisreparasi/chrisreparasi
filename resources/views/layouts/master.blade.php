@@ -58,7 +58,7 @@
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <a class="btn btn-dark" href="{{ route('admin.register') }}">{{ __('Register') }}</a>
+        <a class="btn btn-dark" href="{{ route('admin.register') }}">Register</a>
       </li>
       <div class="logout">
         <a href="{{ route('logout') }}" class="btn btn-dark"
@@ -150,7 +150,7 @@
 
   <div class="modal fade" id="cetak-laporan" aria-hidden="true">
     <div class="modal-dialog ">
-      <div class="modal-content" style="width:600px;">
+      <div class="modal-content" style="width:100%;">
         <div class="modal-header">
           <h5 class="modal-title" id="modal-judul">Cetak Laporan</h5>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -230,5 +230,6 @@
 
 @yield('script')
 
+@include('sweetalert::alert')
 </body>
 </html>

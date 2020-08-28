@@ -13,17 +13,6 @@
       </div>
       <div class="card-body">
 
-        @if( session('hapus') )
-          <div class="alert alert-danger">
-            {{ session('hapus') }}
-          </div>
-        @endif
-        @if( session('status') )
-          <div class="alert alert-success">
-            {{ session('status') }}
-          </div>
-        @endif
-
         <a href="/karyawan/create" class="btn btn-info">Tambah Data Karyawan</a>
         <br><br>
         <table class="table table-striped display nowrap table-sm font-weight-normal" style="width:100%" id="tabel_karyawan">

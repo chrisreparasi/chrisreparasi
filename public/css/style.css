@@ -173,7 +173,7 @@
 
 /* Portfolio */
 .portfolio {
-	background-image: url(../img/slider/c2.jpg);
+	background-image: url(../img/slider/c15.jpeg);
 	background-attachment: fixed;
 	background-size: cover;
 	color: whitesmoke;
@@ -251,7 +251,7 @@
 
 /* Footer 2 */
 .footer2 {
-	background-color: rgb(182, 182, 182);
+	background-color: #808080;
 	color: snow;
 	padding-top: 20px;
 }

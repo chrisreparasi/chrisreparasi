@@ -12,18 +12,7 @@
         <h2 class="text-center font-weight-normal">DATA BARANG</h2>
       </div>
       <div class="card-body">
-
-        @if ( session('status') )
-          <div class="alert alert-success">
-            {{ session('status') }}
-          </div>
-        @endif
-        @if ( session('hapus') )
-          <div class="alert alert-danger">
-            {{ session('hapus') }}
-          </div>
-        @endif
-
+        
         <a href="javascript:void(0)" class="btn btn-info" id="tombol-tambah">Tambah Data Barang</a>
         <br><br>
         <table class="table table-striped table-sm display nowrap" style="width:100%" id="tabel_barang">

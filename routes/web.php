@@ -26,37 +26,38 @@ Route::post('/pesan','PesanController@store')->name('store.pesan');
 
 Route::match(["GET", "POST"], "/register", function(){ return redirect("/login"); })->name("register");
 
-Route::match(["GET", "POST"], "/admin-chris-reparasi", function(){ return redirect("/adminregister"); })->name("admin.register");
-
 Route::middleware('auth')->group(function() {
         
-    // Database Barang
-    Route::get('/barang','BarangController@index');
-    Route::get('/barang/create','BarangController@create');
-    Route::post('/barang','BarangController@store');
-    Route::get('/barang/{barang}/edit','BarangController@edit');
-    Route::patch('/barang/{barang}','BarangController@update');
-    Route::delete('/barang/{barang}','BarangController@destroy');
-    Route::post('/laporanpdf','BarangController@generatePDF');
+  // Database Barang
+  Route::get('/barang','BarangController@index');
+  Route::get('/barang/create','BarangController@create');
+  Route::post('/barang','BarangController@store');
+  Route::get('/barang/{barang}/edit','BarangController@edit');
+  Route::patch('/barang/{barang}','BarangController@update');
+  Route::delete('/barang/{barang}','BarangController@destroy');
+  Route::post('/laporanpdf','BarangController@generatePDF');
 
-    // Database Pelanggan
-    Route::get('/pelanggan','PelangganController@index');
-    Route::get('/pelanggan/create','PelangganController@create');
-    Route::post('/pelanggan','PelangganController@store');
-    Route::get('/pelanggan/{pelanggan}/edit','PelangganController@edit');
-    Route::patch('/pelanggan/{pelanggan}','PelangganController@update');
-    Route::delete('/pelanggan/{pelanggan}','PelangganController@destroy');
+  // Database Pelanggan
+  Route::get('/pelanggan','PelangganController@index');
+  Route::get('/pelanggan/create','PelangganController@create');
+  Route::post('/pelanggan','PelangganController@store');
+  Route::get('/pelanggan/{pelanggan}/edit','PelangganController@edit');
+  Route::patch('/pelanggan/{pelanggan}','PelangganController@update');
+  Route::delete('/pelanggan/{pelanggan}','PelangganController@destroy');
 
-    // Database Karyawan
-    Route::get('/karyawan','KaryawanController@index');
-    Route::get('/karyawan/create','KaryawanController@create');
-    Route::post('/karyawan','KaryawanController@store');
-    Route::get('/karyawan/{karyawan}/edit','KaryawanController@edit');
-    Route::patch('/karyawan/{karyawan}','KaryawanController@update');
-    Route::delete('/karyawan/{karyawan}','KaryawanController@destroy');
+  // Database Karyawan
+  Route::get('/karyawan','KaryawanController@index');
+  Route::get('/karyawan/create','KaryawanController@create');
+  Route::post('/karyawan','KaryawanController@store');
+  Route::get('/karyawan/{karyawan}/edit','KaryawanController@edit');
+  Route::patch('/karyawan/{karyawan}','KaryawanController@update');
+  Route::delete('/karyawan/{karyawan}','KaryawanController@destroy');
 
-    // Database Pesan
-    Route::resource('pesan','PesanController')->except(['store']);
+  // Database Pesan
+  Route::resource('pesan','PesanController')->except(['store']);
 
-    Route::get('/home', 'HomeController@index')->name('home');
+  Route::get('/home', 'HomeController@index')->name('home');
+
+  Route::get('/addadmin','AdminController@create')->name('admin.register');
+  Route::post('/admin','AdminController@store');
 });

@@ -8,5 +8,5 @@ class Pesan extends Model
 {
     protected $table = 'pesan';
     protected $primaryKey ="id_pesan";
-    protected $fillable = ['nm_plgn','email','pesan'];
+    protected $fillable = ['nm_plgn','id_plgn','email','pesan'];
 }

@@ -12,17 +12,6 @@
         <h2 class="text-center font-weight-normal">DATA PELANGGAN</h2>
       </div>
       <div class="card-body">
-
-        @if( session('sukses') )
-          <div class="alert alert-success">
-            {{ session('sukses') }}
-          </div>
-        @endif
-        @if( session('hapus') )
-          <div class="alert alert-danger">
-            {{ session('hapus') }}
-          </div>
-        @endif
         
         <a href="/pelanggan/create" class="btn btn-info">Tambah Data Pelanggan</a>
         <br><br>

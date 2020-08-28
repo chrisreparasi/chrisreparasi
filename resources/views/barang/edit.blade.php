@@ -30,7 +30,7 @@
               <select value="{{ old('id_krywn') }}" name="id_krywn" class="form-control @error('id_krywn') is-invalid @enderror" id="id_krywn">
                 <option selected disabled>Pilih Karyawan</option>
                 @foreach($karyawan as $krywn)
-                  <option value="{{ $krywn->id_krywn }}" {{ $barang->id_krywn == $krywn->id_krywn ? 'selected' : '' }}>ID {{ $krywn->id_krywn }} ({{ $krywn->nm_krywn }})</option>
+                  <option value="{{ $krywn->id_krywn }}" {{ $barang->id_krywn == $krywn->id_krywn ? 'selected' : '' }}>ID {{ $krywn->id_krywn }} ({{ $krywn->nm_krywn }} - {{ $krywn->tugas }})</option>
                 @endforeach
               </select>
               @error('id_krywn')<div class="invalid-feedback">{{ $message }}</div> @enderror
